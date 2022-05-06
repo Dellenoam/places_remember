@@ -1,0 +1,22 @@
+{% extends 'memories/base.html' %}
+{% block content %}
+    {% if memories.count == 0 %}
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">You don't have memories.</h1>
+            <p class="col-md-8 fs-4">Hmm, looks like you don't have any memories. Would you like to create one?</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'new_memory' %}">Yeap</a>
+        </div>
+    {% else %}
+        {% for memory in memories %}
+            <div class="col-md-6 mx-auto">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <h3 class="mb-1">{{ memory.title }}</h3>
+                        <p class="card-text mb-auto mt-1">{{ memory.description }}</p>
+                        <p class="card-text mb-auto mt-1">Location: {{ memory.location }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

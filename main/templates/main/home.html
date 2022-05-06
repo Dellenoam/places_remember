@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">All set, you can use this site</h1>
+        </div>
+    {% else %}
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Welcome to Places Remember</h1>
+            <p class="col-md-8 fs-4">Here you can save your memories of the places you've visited</p>
+            <p class="col-md-8 fs-4">If you want to use this site, you must be logged in</p>
+        </div>
+    {% endif %}
+{% endblock %}

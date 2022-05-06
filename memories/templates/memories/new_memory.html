@@ -1,0 +1,30 @@
+{% extends 'memories/base.html' %}
+{% block content %}
+    <div class="container-fluid mb-3">
+        {% if error != '' %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb3 form-memory">
+                <label for="title_memory">Title</label>
+                {{ form.title }}<br>
+            </div>
+            <div class="mb3 form-memory">
+                <label for="description_memory">Description</label>
+                {{ form.description }}<br>
+            </div>
+            <div class="mb3 form-memory">
+                <label for="location_memory">Location</label>
+                {{ form.location }}<br>
+            </div>
+            <div id="map"></div>
+            <br>
+            <button class="btn btn-primary form-memory" type="submit">Confirm</button>
+        </form>
+    </div>
+    <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtM6oVFNXyJm8rHjiLHE-y4NkmxAA28wE&callback=initMap&v=weekly"></script>
+{% endblock %}
