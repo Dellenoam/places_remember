@@ -1,7 +1,7 @@
 # places_remember
 This is the site that saves your memories of the places you've visited.
 
-You can see how it works [here](https://my-task-places-remember.herokuapp.com/)
+You can see how it works [here](https://my-task-places-remember.herokuapp.com/) (currently unavailable)
 
 If you want to use it, then you need to do a few things.
 ## 1. Set your settings
