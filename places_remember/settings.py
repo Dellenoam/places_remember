@@ -74,7 +74,7 @@ if 'test' in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'test_db.db',
+            'NAME': BASE_DIR / 'test_db.db',
         }
     }
 else:
